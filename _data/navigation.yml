@@ -2,10 +2,10 @@
 main:
   - title: "Quick-Start Guide"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Category"
-    children:
-      - title: "blog"
-        url: "/blog"
+  # - title: "Category"
+  #   children:
+  #     - title: "blog"
+  #       url: "/blog"
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
@@ -14,3 +14,8 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+sidebar-category:
+  - title: "카테고리"
+    children:
+      - title: "블로그"
+        url: "/blog"
