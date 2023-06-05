@@ -5,6 +5,7 @@ categories:
   - Blog
 tages:
   - Blog
+permalink: /blog/
 ---
 
 첫 번째 글을 포스트 해보자.
