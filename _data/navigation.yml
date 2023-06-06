@@ -17,3 +17,22 @@ sidebar-category:
     children:
       - title: "블로그"
         url: "/blog"
+docs:
+  - title: Framework
+    children:
+      - title: "Vue.js"
+        url: vue/
+        category: "vue"
+      - title: "JPA"
+        url: jpa/
+        category: "jpa"
+  - title: DevTool
+    children:
+      - title: "Eclipse"
+        url: eclipse/
+        category: "eclipse"
+  - title: Etc
+    children:
+      - title: "Blog"
+        url: blog/
+        category: "blog"
