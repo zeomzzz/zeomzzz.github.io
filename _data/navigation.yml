@@ -15,6 +15,11 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 docs:
+  - title: 개인공부
+    children:
+      - title: "Login"
+        url: /login
+        category: "login"
   - title: Framework
     children:
       - title: "Vue.js"
