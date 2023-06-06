@@ -293,4 +293,3 @@ defaults:
       sidebar: 
         nav: "docs"
       show_date: true
-        date_format: "%Y-%m-%d"
