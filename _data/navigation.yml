@@ -17,22 +17,9 @@ main:
 docs:
   - title: 개인공부
     children:
-      - title: "Login"
+      - title: "login"
         url: /login
         category: "login"
-  - title: Framework
-    children:
-      - title: "Vue.js"
-        url: /vue
-        category: "vue"
-      - title: "JPA"
-        url: /jpa
-        category: "jpa"
-  - title: DevTool
-    children:
-      - title: "Eclipse"
-        url: /eclipse
-        category: "eclipse"
   - title: Etc
     children:
       - title: "blog"
