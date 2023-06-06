@@ -3,7 +3,7 @@ title:  "Backtracking"
 excerpt: "Backtracking 이론 정리"
 
 categories:
-  - Algorithm
+  - algorithm
 tags:
   - [Algorithm, Backtracking]
 

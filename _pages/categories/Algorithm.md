@@ -4,7 +4,7 @@ permalink: algorithm
 title: "Algorithm"
 
 author_profile: true
-taxonomy: Algorithm
+taxonomy: algorithm
 sidebar:
   nav: "docs"
 ---
