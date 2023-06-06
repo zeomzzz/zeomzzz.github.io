@@ -20,6 +20,11 @@ docs:
       - title: "Login"
         url: /login
         category: "login"
+  - title: Algorithm
+    children:
+    - title: "Algorithm"
+      url: /algorithm
+      category: "Algorithm"
   - title: Etc
     children:
       - title: "Blog"
