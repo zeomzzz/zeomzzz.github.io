@@ -28,6 +28,11 @@ docs:
       - title: "Eclipse"
         url: /eclipse
         category: "eclipse"
+- title: 개인공부
+  children:
+  - title: "Login"
+    url: /login
+    category: "login"
   - title: Etc
     children:
       - title: "Blog"
