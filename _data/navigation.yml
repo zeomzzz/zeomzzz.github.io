@@ -35,6 +35,6 @@ docs:
         category: "eclipse"
   - title: Etc
     children:
-      - title: "Blog"
+      - title: "blog"
         url: /blog
         category: "blog"
