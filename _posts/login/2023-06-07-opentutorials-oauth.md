@@ -17,11 +17,9 @@ last_modified_at: 2023-06-07
 # **생활코딩 OAuth 2.0**
 
 <br>
-<br>
 
 ## **1강. 수업 소개**
 
-<br>
 <br>
 
 ### **왜 oAuth를 사용할까?**
@@ -60,7 +58,6 @@ last_modified_at: 2023-06-07
 ## **2강. 역할**
 
 <br>
-<br>
 
 ### **oAuth에 등장하는 3자**
 
@@ -86,7 +83,6 @@ last_modified_at: 2023-06-07
 ## **3강. 등록**
 
 <br>
-<br>
 
 ### **oAuth 등록 절차 1. 등록**
 
@@ -108,7 +104,6 @@ last_modified_at: 2023-06-07
 
 ## **4강. Resource Owner의 승인**
 
-<br>
 <br>
 
 ### **Resource Owner의 승인을 받는 절차**
@@ -168,7 +163,6 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
     
 
 <br>
-<br>
 
 ## **5강. Resource Server의 승인**
 
@@ -222,7 +216,6 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
 ```
 
 <br>
-<br>
 
 ## **6강. 액세스 토큰 발급**
 
@@ -253,7 +246,6 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
 - Resource Server는 Access Token에 해당하는 요청이 왔을 때에만 Resource Owner에 대한 scope의 기능을 Client에게 허용함
 
 <br>
-<br>
 
 ## **7강. API 호출**
 
@@ -277,7 +269,6 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
         - curl를 이용 (curl : 해당 웹페이지의 정보를 받을 수 있는 프로그램)
         - `-H` 옵션을 이용하여 헤더에 넣음
 
-<br>
 <br>
 
 ## **8강. Refresh Token**
