@@ -17,7 +17,7 @@ main:
 docs:
   - title: 개인공부
     children:
-      - title: "login"
+      - title: "Login"
         url: /login
         category: "login"
   - title: Etc

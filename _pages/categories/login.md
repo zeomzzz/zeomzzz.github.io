@@ -1,7 +1,7 @@
 ---
 layout: category
 permalink: login
-title: "login"
+title: "Login"
 
 author_profile: true
 taxonomy: login
