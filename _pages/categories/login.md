@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: login
-title: "Login"
+title: "login"
 
 author_profile: true
 sidebar:

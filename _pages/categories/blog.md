@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: blog
-title: "Blog"
+title: "blog"
 
 author_profile: true
 sidebar:
