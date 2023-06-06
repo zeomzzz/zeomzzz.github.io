@@ -16,18 +16,18 @@ docs:
   - title: Framework
     children:
       - title: "Vue.js"
-        url: /docs/vue/
+        url: /vue
         category: "vue"
       - title: "JPA"
-        url: /docs/jpa/
+        url: /jpa
         category: "jpa"
   - title: DevTool
     children:
       - title: "Eclipse"
-        url: /docs/eclipse/
+        url: /eclipse
         category: "eclipse"
   - title: Etc
     children:
       - title: "Blog"
-        url: /docs/blog/
+        url: /blog
         category: "blog"
