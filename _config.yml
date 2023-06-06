@@ -286,9 +286,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false #true
       comments: true
-      share: true
+      share: false # true
       related: true
       sidebar: 
-        nav: "sidebar-category"
+        nav: "docs"
