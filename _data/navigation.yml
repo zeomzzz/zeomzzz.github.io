@@ -19,7 +19,7 @@ docs:
     children:
       - title: "Login"
         url: /login
-        category: "login"
+        category: "Login"
   - title: Algorithm
     children:
     - title: "Algorithm"
@@ -29,4 +29,4 @@ docs:
     children:
       - title: "Blog"
         url: /blog
-        category: "blog"
+        category: "Blog"

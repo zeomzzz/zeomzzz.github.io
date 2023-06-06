@@ -4,7 +4,7 @@ permalink: login
 title: "Login"
 
 author_profile: true
-taxonomy: login
+taxonomy: Login
 sidebar:
   nav: "docs"
 ---

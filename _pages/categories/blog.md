@@ -4,7 +4,7 @@ permalink: blog
 title: "Blog"
 
 author_profile: true
-taxonomy: blog
+taxonomy: Blog
 sidebar:
   nav: "docs"
 ---
