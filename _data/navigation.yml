@@ -24,7 +24,7 @@ docs:
     children:
     - title: "Algorithm"
       url: /algorithm
-      category: "algorithm"
+      category: "Algorithm"
   - title: Etc
     children:
       - title: "Blog"
