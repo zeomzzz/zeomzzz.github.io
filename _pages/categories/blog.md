@@ -1,7 +1,7 @@
 ---
 layout: category
 permalink: blog
-title: "blog"
+title: "Blog"
 
 author_profile: true
 taxonomy: blog

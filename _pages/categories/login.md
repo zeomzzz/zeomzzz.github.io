@@ -1,9 +1,10 @@
 ---
-layout: archive
+layout: category
 permalink: login
 title: "login"
 
 author_profile: true
+taxonomy: login
 sidebar:
   nav: "docs"
 ---

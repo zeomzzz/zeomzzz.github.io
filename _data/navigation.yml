@@ -22,6 +22,6 @@ docs:
         category: "login"
   - title: Etc
     children:
-      - title: "blog"
+      - title: "Blog"
         url: /blog
         category: "blog"
