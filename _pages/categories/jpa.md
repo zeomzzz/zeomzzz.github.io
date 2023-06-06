@@ -1,7 +1,7 @@
 ---
 layout: archive
-permalink: jpa
-title: "JPA"
+permalink: login
+title: "Login"
 
 author_profile: true
 sidebar:
