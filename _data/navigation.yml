@@ -13,26 +13,21 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 sidebar-category:
-  - title: "카테고리"
-    children:
-      - title: "블로그"
-        url: "/blog"
-docs:
   - title: Framework
     children:
       - title: "Vue.js"
-        url: vue/
+        url: /vue
         category: "vue"
       - title: "JPA"
-        url: jpa/
+        url: /jpa
         category: "jpa"
   - title: DevTool
     children:
       - title: "Eclipse"
-        url: eclipse/
+        url: /eclipse
         category: "eclipse"
   - title: Etc
     children:
       - title: "Blog"
-        url: blog/
+        url: /blog
         category: "blog"
