@@ -1,9 +1,10 @@
 ---
-layout: archive
+layout: category
 permalink: blog
 title: "blog"
 
 author_profile: true
+taxonomy: blog
 sidebar:
   nav: "docs"
 ---
