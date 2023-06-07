@@ -3,7 +3,7 @@ title:  "OAuth 2.0 생활코딩"
 excerpt: "생활코딩 OAuth 2.0 필기"
 
 categories:
-  - login
+  - Login
 tags:
   - [Login, OAuth, Lecture]
 
@@ -22,7 +22,7 @@ last_modified_at: 2023-06-07
 
 ## **1강. 수업 소개**
 
-<br>
+
 
 ### **왜 oAuth를 사용할까?**
 
@@ -84,7 +84,7 @@ last_modified_at: 2023-06-07
 
 ## **3강. 등록**
 
-<br>
+
 
 ### **oAuth 등록 절차 1. 등록**
 
@@ -103,10 +103,11 @@ last_modified_at: 2023-06-07
     따라서 다른 곳에서 요청하면 무시함 |
 
 <br>
+<br>
 
 ## **4강. Resource Owner의 승인**
 
-<br>
+
 
 ### **Resource Owner의 승인을 받는 절차**
 
@@ -165,10 +166,10 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
     
 
 <br>
+<br>
 
 ## **5강. Resource Server의 승인**
 
-<br>
 <br>
 
 - 지금까지 한 것 : Resource Owner의 승인을 얻기
@@ -218,10 +219,10 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
 ```
 
 <br>
+<br>
 
 ## **6강. 액세스 토큰 발급**
 
-<br>
 <br>
 
 - 이전 : Resource Server가 Client를 승인
@@ -272,11 +273,10 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
         - `-H` 옵션을 이용하여 헤더에 넣음
 
 <br>
+<br>
 
 ## **8강. Refresh Token**
 
-<br>
-<br>
 
 ### **Refresh Token**
 
