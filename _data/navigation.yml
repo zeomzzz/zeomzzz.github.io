@@ -15,16 +15,27 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 docs:
-  - title: 개인공부
+  - title: Framework
     children:
-      - title: "Login"
-        url: /login
-        category: "Login"
+    - title: "JPA"
+      url: /jpa
+      category: "JPA"
+    - title: "Vue.js"
+      url: /vue
+      category: "Vue.js"
   - title: Algorithm
     children:
     - title: "Algorithm"
       url: /algorithm
       category: "Algorithm"
+  - title: Others
+    children:
+      - title: "Login"
+        url: /login
+        category: "Login"
+      - title: "Git"
+        url: /git
+        category: "Git"
   - title: Etc
     children:
       - title: "Blog"
