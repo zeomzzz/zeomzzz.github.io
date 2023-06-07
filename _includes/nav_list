@@ -2,9 +2,9 @@
 <a href="https://hits.seeyoufarm.com">
   <style>
     .hits {
-      width: auto;
+      width: 90px !important;
       height: auto;
-      max-width: 75px;
+      max-width: 90px !important;
       max-height: 20px;
     }
   </style>
