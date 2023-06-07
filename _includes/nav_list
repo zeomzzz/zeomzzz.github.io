@@ -1,6 +1,6 @@
 {% assign navigation = site.data.navigation[include.nav] %}
 <a href="https://hits.seeyoufarm.com">
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fzeomzzz.github.io&count_bg=%234E91A5&title_bg=%23636E72&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false" width="90px"/></a>
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fzeomzzz.github.io&count_bg=%234E91A5&title_bg=%23636E72&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false" width="90"/></a>
 
 <nav class="nav__list">
   {% if page.sidebar.title %}<h3 class="nav__title" style="padding-left: 0;">{{ page.sidebar.title }}</h3>{% endif %}
