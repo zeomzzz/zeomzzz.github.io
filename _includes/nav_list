@@ -4,7 +4,7 @@
     .hits {
       width: auto;
       height: auto;
-      max-width: 99px;
+      max-width: 45%;
       max-height: 20px;
     }
   </style>
