@@ -16,7 +16,11 @@ last_modified_at: 2023-06-08
 
 <br>
 
-# **01강. 수업 소개, 02강. 실습준비**
+# **생활코딩 WEB3 - Express**
+
+<br>
+
+## **01강. 수업 소개, 02강. 실습준비**
 
 <br>
 
@@ -41,7 +45,11 @@ last_modified_at: 2023-06-08
 <br>
 <br>
 
-# **03강-1. Hello World 1**
+## **03강-1. Hello World 1**
+
+<br>
+
+### **express 실행**
 
 <br>
 
@@ -67,11 +75,13 @@ last_modified_at: 2023-06-08
 
 <br>
 
-# **03강-2. Hello World 2**
+## **03강-2. Hello World 2**
 
 <br>
 
-- Hello World 코드 풀이
+### **Hello World 코드 풀이**
+
+<br>
     
     ```jsx
     var express = require('express') // express 모듈을 express라는 이름으로 load
@@ -102,4 +112,4 @@ last_modified_at: 2023-06-08
     
 <br>
 
-# **04강. 홈페이지 구현**
+## **04강. 홈페이지 구현**
