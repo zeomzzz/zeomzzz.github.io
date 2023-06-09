@@ -83,7 +83,8 @@ last_modified_at: 2023-06-08
 
 <br>
     
-    ```jsx
+    ```
+
     var express = require('express') // express 모듈을 express라는 이름으로 load
     var app = express() // express를 함수처럼 호출(-> express는 함수!) resturn된 값을 app에 넣음. app은 Application 객체
     const port = 3000
@@ -108,6 +109,7 @@ last_modified_at: 2023-06-08
       console.log(`Example app listening on port ${port}`) // listen에 성공하면 실행
     })
     // 기존 코드 중 app.listen(3000); 과 동일
+    
     ```
     
 <br>
