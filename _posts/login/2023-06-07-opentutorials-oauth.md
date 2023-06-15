@@ -50,7 +50,7 @@ last_modified_at: 2023-06-07
 
 <br>
 
-- oAuth를 통해 access Token을 획득 → 그 access Token을 통해 다른 서비스에 접근 → 데이터 CRUD 할 수 있게 된다.
+- oAuth를 통해 access Token을 획득 -> 그 access Token을 통해 다른 서비스에 접근 -> 데이터 CRUD 할 수 있게 된다.
 - 이에 따라 회원의 아이디/비밀번호 없이도 회원을 식별할 수 있음
     - 이를 federated identity라고 하는데, 이것의 가장 기반에 있는 기술이 oAuth
 
@@ -71,12 +71,13 @@ last_modified_at: 2023-06-07
 | Resource Owner | 자원의 소유자 (User) |
 | Client | Resource Server에 접속해서 정보를 가지고 가는 Client (우리의 서비스) |
 
-```
-💡 Authorization Server?
+<br>
 
-- 인증과 관련된 처리를 전담하는 서버
-- 공식 문서는 Resource Server와 구분하여 사용하지만, 본 강의에서는 구분하지 않음
-```
+>💡 Authorization Server?
+>
+>- 인증과 관련된 처리를 전담하는 서버
+>- 공식 문서는 Resource Server와 구분하여 사용하지만, 본 강의에서는 구분하지 않음
+
 
 <br>
 <br>
@@ -84,7 +85,7 @@ last_modified_at: 2023-06-07
 
 ## **3강. 등록**
 
-
+<br>
 
 ### **oAuth 등록 절차 1. 등록**
 
@@ -99,15 +100,14 @@ last_modified_at: 2023-06-07
     | --- | --- |
     | Client ID | 우리가 만들고 있는 애플리케이션을 식별하는 식별자. id (노출되어도 됨) |
     | Client Secret | 그것에 대한 비밀번호 (노출되면 안됨) |
-    | Authorized redirect URIs | 리소스 서버가 권한을 부여하는 과정에서 authorize code를 전달해줄건데, 이 주소로 전달해달라고 알려주는 것
-    따라서 다른 곳에서 요청하면 무시함 |
+    | Authorized redirect URIs | 리소스 서버가 권한을 부여하는 과정에서 authorize code를 전달해줄건데, 이 주소로 전달해달라고 알려주는 것 <br> 따라서 다른 곳에서 요청하면 무시함 |
 
 <br>
 <br>
 
 ## **4강. Resource Owner의 승인**
 
-
+<br>
 
 ### **Resource Owner의 승인을 받는 절차**
 
@@ -213,10 +213,7 @@ ex. Resource Server의 기능 A, B, C, D 중 Client는 B, C의 기능만 필요
 
 <br>
 
-```
-💡 3자간의 인증 방법 Authorization Code 포함 4가지 있음 !!
-
-```
+>💡 3자간의 인증 방법 Authorization Code 포함 4가지 있음 !!
 
 <br>
 <br>
