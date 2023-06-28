@@ -41,6 +41,9 @@ docs:
       - title: "Login"
         url: /login
         category: "Login"
+      - title: "Tools"
+        url: /tools
+        caregory: "Tools"
       - title: "Git"
         url: /git
         category: "Git"
