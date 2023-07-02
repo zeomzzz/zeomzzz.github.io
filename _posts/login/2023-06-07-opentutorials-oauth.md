@@ -16,6 +16,12 @@ last_modified_at: 2023-06-07
 
 <br>
 
+>**💡 흐름 요약**
+> 
+> - [google drive](https://docs.google.com/presentation/d/1Kw5ceSuOYM8unpharIllq0UxrB8ReLymA2uAjgIhMD4/edit?pli=1#slide=id.p)
+
+<br>
+
 # **생활코딩 OAuth 2.0**
 
 <br>
