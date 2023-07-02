@@ -38,12 +38,15 @@ docs:
       category: "MySQL"
   - title: Others
     children:
+      - title: "Web"
+        url: /web
+        category: "Web"
       - title: "Login"
         url: /login
         category: "Login"
       - title: "Tools"
         url: /tools
-        caregory: "Tools"
+        category: "Tools"
       - title: "Git"
         url: /git
         category: "Git"
