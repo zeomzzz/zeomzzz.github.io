@@ -57,7 +57,7 @@ last_modified_at: 2023-06-08
 - [express 사이트](https://expressjs.com/)
 - Hello World 코드
     
-    ```java
+    ```javascript
     const express = require('express')
     const app = express()
     const port = 3000
@@ -83,34 +83,32 @@ last_modified_at: 2023-06-08
 
 <br>
     
-    ```
-
-    var express = require('express') // express 모듈을 express라는 이름으로 load
-    var app = express() // express를 함수처럼 호출(-> express는 함수!) resturn된 값을 app에 넣음. app은 Application 객체
-    const port = 3000
+```javascript
+  var express = require('express') // express 모듈을 express라는 이름으로 load
+  var app = express() // express를 함수처럼 호출(-> express는 함수!) resturn된 값을 app에 넣음. app은 Application 객체
+  const port = 3000
+  
+  // get : route, routing을 함. 방향을 잡는 것. path마다 적당한 응답을 줌
+  // app.get('/', (req, res) => {
+  //   res.send('Hello World!')
+  // })
+  app.get('/', function(req, res) {
+    return res.send('/')
+  });
+  // http://localhost:3000/ 실행 결과 : /
     
-    // get : route, routing을 함. 방향을 잡는 것. path마다 적당한 응답을 줌
-    // app.get('/', (req, res) => {
-    //   res.send('Hello World!')
-    // })
-    app.get('/', function(req, res) {
-      return res.send('/')
-    });
-    // http://localhost:3000/ 실행 결과 : /
+  app.get('/page', function(req, res) {
+    return res.send('/page')
+  });
+  // http://localhost:3000/page 실행 결과 : /page
+  // -> app.get의 첫번째 인자로 path를 전달하여 routing
+  // (이전에는 pathname== ~ 로 구현)
     
-    app.get('/page', function(req, res) {
-      return res.send('/page')
-    });
-    // http://localhost:3000/page 실행 결과 : /page
-    // -> app.get의 첫번째 인자로 path를 전달하여 routing
-    // (이전에는 pathname== ~ 로 구현)
-    
-    app.listen(port, () => { // listen에 3000을 주면, listen이 실행될 때 웹서버가 실행됨
-      console.log(`Example app listening on port ${port}`) // listen에 성공하면 실행
-    })
-    // 기존 코드 중 app.listen(3000); 과 동일
-    
-    ```
+  app.listen(port, () => { // listen에 3000을 주면, listen이 실행될 때 웹서버가 실행됨
+    console.log('Example app listening on port ${port}') // listen에 성공하면 실행
+  })
+  // 기존 코드 중 app.listen(3000); 과 동일
+  ```
     
 <br>
 
