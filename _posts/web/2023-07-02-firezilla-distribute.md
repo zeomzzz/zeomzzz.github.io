@@ -155,16 +155,16 @@ PuTTY(ubuntu)에서
 - jar 파일, sql 파일을 ubuntu 하위로 옮긺
     
     
-    > 💡 **SpringBoot -> jar** [(참고)](https://xzio.tistory.com/1401)
-    >
-    >- 프로젝트 선택 > Run as > Maven build
-    >    - Goals : package
-    >    - Profiles: pom.xml
-    >    
-    >    이후 Run
-    >    
-    >- Build Success 뜨면 성공
-    >- 빌드 파일 경로 : 콘솔 로그 중 Building jar : 에 출력됨
+> 💡 **SpringBoot -> jar** [(참고)](https://xzio.tistory.com/1401)
+>
+>- 프로젝트 선택 > Run as > Maven build
+>    - Goals : package
+>    - Profiles: pom.xml
+>    
+>    이후 Run
+>    
+>- Build Success 뜨면 성공
+>- 빌드 파일 경로 : 콘솔 로그 중 Building jar : 에 출력됨
     
 - ubuntu에서 ls로 파일 확인
 - 가상컴퓨터의 mysql에 sql 쿼리 넣어주기 (aws DB 사용하는 경우에는 진행 X)
