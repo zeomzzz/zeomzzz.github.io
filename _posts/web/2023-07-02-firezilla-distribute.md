@@ -1,11 +1,11 @@
 ---
-title:  "FireZilla를 이용한 배포 (SpringBoot, Vue.js)"
+title:  "FileZilla를 이용한 배포 (SpringBoot, Vue.js)"
 excerpt: "첫 배포 기념 정리"
 
 categories:
   - Web
 tags:
-  - [Web, Distribution, FireZilla]
+  - [Web, Distribution, FileZilla]
 
 toc: true
 toc_sticky: true

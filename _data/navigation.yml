@@ -36,6 +36,11 @@ docs:
     - title: "MySQL"
       url: /mysql
       category: "MySQL"
+  - title: CS
+    children:
+    - title: "Data Structure"
+      url: /datastructure
+      category: "Data Structure"
   - title: Others
     children:
       - title: "Web"
