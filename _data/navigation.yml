@@ -46,9 +46,9 @@ docs:
       - title: "Web"
         url: /web
         category: "Web"
-      - title: "Login"
-        url: /login
-        category: "Login"
+      - title: "Auth"
+        url: /auth
+        category: "Auth"
       - title: "Tools"
         url: /tools
         category: "Tools"

@@ -1,10 +1,10 @@
 ---
 layout: category
-permalink: login
-title: "Login"
+permalink: auth
+title: "Auth"
 
 author_profile: true
-taxonomy: Login
+taxonomy: Auth
 sidebar:
   nav: "docs"
 ---

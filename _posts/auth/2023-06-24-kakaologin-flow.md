@@ -3,9 +3,9 @@ title:  "카카오 로그인 흐름 정리"
 excerpt: "소셜 로그인 스터디 중 공유한 카카오 로그인 흐름 정리"
 
 categories:
-  - Login
+  - Auth
 tags:
-  - [Login, KAuth, Social Login]
+  - [Auth, KAuth, Social Login]
 
 toc: true
 toc_sticky: true

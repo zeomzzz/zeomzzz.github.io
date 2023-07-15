@@ -3,9 +3,9 @@ title:  "OAuth 2.0 생활코딩"
 excerpt: "생활코딩 OAuth 2.0 필기"
 
 categories:
-  - Login
+  - Auth
 tags:
-  - [Login, OAuth, Lecture]
+  - [Auth, OAuth, Lecture]
 
 toc: true
 toc_sticky: true
