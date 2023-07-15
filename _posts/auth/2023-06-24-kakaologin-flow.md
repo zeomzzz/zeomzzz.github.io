@@ -34,9 +34,9 @@ last_modified_at: 2023-07-02
 
 <br>
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/02.png ){: .align-center}
+![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/02.png ){: .align-center}
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/03.png ){: .align-center}
+![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/03.png ){: .align-center}
 
 <br>
 1) GET /oath/authorize
@@ -85,9 +85,9 @@ last_modified_at: 2023-07-02
 
 <br>
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/02.png ){: .align-center}
+![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/02.png ){: .align-center}
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/05.png ){: .align-center}
+![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/05.png ){: .align-center}
 <br>0) Backend 코드 작성
 
 <br>
@@ -104,18 +104,18 @@ last_modified_at: 2023-07-02
 - 구조
     1. connction 생성
         
-        ![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/06.png ){: .align-center}
+        ![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/06.png ){: .align-center}
         
     2. POST를 보낼 Body 생성
         
-        ![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/07.png ){: .align-center}
+        ![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/07.png ){: .align-center}
         
     3. 받아온 결과 JSON 파싱
         - 성공 시, 응답 코드 200
             
             ex. 
             
-            ![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/08.png ){: .align-center}
+            ![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/08.png ){: .align-center}
             
 <br>
 
@@ -212,13 +212,13 @@ public class OAuthService{
 
 <br>
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/02.png ){: .align-center}
+![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/02.png ){: .align-center}
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/09.png ){: .align-center}
+![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/09.png ){: .align-center}
 
 <br>1) 발급받은 토큰으로 사용자 정보 조회
 
-![]({{ site.url }}{{ site.baseurl }}/assets/images/login/kakaologin-flow/10.png ){: .align-center}
+![]({{ site.url }}{{ site.baseurl }}/assets/images/auth/kakaologin-flow/10.png ){: .align-center}
 
 >🚨 Bearer 뒤에 공백 !!
 
