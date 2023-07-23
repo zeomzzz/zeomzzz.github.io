@@ -3,9 +3,9 @@ title:  "Linked List"
 excerpt: ""
 
 categories:
-  - Data Structure
+  - Algorithm
 tags:
-  - [Linked List]
+  - [Algorithm, Linked List]
 
 toc: true
 toc_sticky: true
