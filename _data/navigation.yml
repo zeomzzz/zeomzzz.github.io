@@ -26,6 +26,11 @@ docs:
     - title: "Express.js"
       url: /express
       category: "Express.js"
+  - title: Language
+    children:
+    - title: "Java"
+      url: /java
+      category: "Java"
   - title: Algorithm
     children:
     - title: "Algorithm"
