@@ -20,6 +20,9 @@ docs:
     - title: "JPA"
       url: /jpa
       category: "JPA"
+    - title: "SpringBoot"
+      url: /springboot
+      category: "SpringBoot"
     - title: "Vue.js"
       url: /vue
       category: "Vue.js"
