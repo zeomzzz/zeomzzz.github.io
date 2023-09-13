@@ -149,3 +149,201 @@ HMACSHA256(
         ```
 
 <br>
+
+# **19강. JWT를 위한 yml 파일 세팅**
+
+<br>
+
+## **yml 예시**
+
+
+```yaml
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
+    username: // username
+    password: // password
+
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+```
+
+<br>
+
+## **Controller**
+
+```java
+package com.cos.jwt.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class RestApiController {
+	
+	@GetMapping("home")
+	public String home() {
+		return "<h1>home</h1>";
+	}
+	
+}
+```
+
+- localhost 8080 으로 접속하면 로그인 화면이 뜸
+    
+    ![]({{ site.url }}{{ site.baseurl }}/assets/images/springboot/security-lecture-section03/01.png ){: .align-center}
+    
+    - Username : user
+    - Password : SpringBoot 실행 시 생성된 security password
+
+<br>
+
+# **20강. jwt를 위한 security 설정**
+
+<br>
+
+## **User Model 생성**
+
+```java
+package com.cos.jwt.model;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import jakarta.persistence.Id;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.Data;
+
+@Data
+@Entity
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String username;
+	private String password;
+	private String roles; // USER, ADMIN
+	
+	public List<String> getRoleList(){
+		if(this.roles.length() > 0) {
+			return Arrays.asList(this.roles.split("."));
+		}
+		return new ArrayList<>();
+	}
+
+}
+```
+
+>🚨 Entity '__' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property) 에러
+>
+>- `@Id` Annotation을 `import jakarta.persistence.Id;` 가 아닌 `import org.springframework.data.annotation.Id` 로 import 하지 않았는지 확인!
+
+<br>
+
+## **Config**
+
+### **Security Config**
+
+```java
+package com.cos.jwt.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.filter.CorsFilter;
+
+import lombok.RequiredArgsConstructor;
+
+@Configuration
+@EnableWebSecurity
+@RequiredArgsConstructor
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	private final CorsFilter corsFilter;
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http
+				.csrf().disable()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 세션을 사용하지 않고 stateless 서버로 만들겠다
+			.and()
+				.addFilter(corsFilter) // 이 필터를 타야 서버가 cors 정책에서 벗어날 수 있음
+				.formLogin().disable() // formLogin 안 쓸거니까 disable (JWT 로그인할 거니까)
+				
+				.httpBasic().disable()
+				.authorizeRequests()
+				.antMatchers("/api/v1/user/**")
+					.access("hasRole('ROLE_USER') or hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+				.antMatchers("/api/v1/manager/**")
+					.access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+				.antMatchers("/api/v1/admin/**")
+					.access("hasRole('ROLE_ADMIN')")
+				.anyRequest().permitAll(); // 다른 요청은 모두 허용
+		
+	}
+	
+}
+```
+
+- `@CrossOrigin` vs. `CorsFilter`
+    - `@CrossOrigin` : 인증이 없는 경우
+    - `CorsFilter` : 인증이 있는 경우. Security Filter에 등록 해주어야 함
+- 이제 실행하면 로그인 하지 않고도 home에 접속 가능 : 세션을 사용하지 않아서 모든 페이지로 접근이 가능해짐
+
+<br>
+
+### **CorsConfig**
+
+```java
+package com.cos.jwt.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+@Configuration
+public class CorsConfig {
+
+	@Bean
+	public CorsFilter corsFilter() {
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		CorsConfiguration config = new CorsConfiguration();
+		config.setAllowCredentials(true); // 내 서버가 응답할 때 json을 js에서 처리할 수 있게 할 지를 설정 (ajax, axios 요청 등을 js에서 받을 수 있도록)
+		config.addAllowedOrigin("*"); // origin을 어디에서든 허용
+		config.addAllowedHeader("*"); // 모든 header를 허용
+		config.addAllowedMethod("*"); // 모든 요청(post, get, put, delete, patch)을 허용
+		source.registerCorsConfiguration("/api/**", config); // /api/**로 들어오는 모든 주소를 이 config로 설정한다고 source에 등록  
+		return new CorsFilter(source);
+	}
+}
+```
+
+<br>
