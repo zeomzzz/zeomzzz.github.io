@@ -43,6 +43,21 @@ last_modified_at: 2023-09-26
     - `del` : index로 제거 ex. del list[0]
     - `remove` : 값으로 제거. 가장 첫 번째 것만 ex. list.remove(3)
 
+- zip
+    - 두 개의 리스트의 요소를 순서대로 튜플로 묶어줌
+    
+    ex. 
+    
+    ```python
+    item = ['candy', 'coffee']
+    price = [500, 1000]
+    
+    z = zip(item, price)
+    print(list(z))
+    
+    >> [('candy', 500), ('coffee', 1000)]
+    ```
+
 <br>
 
 **## 2) Java**

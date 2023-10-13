@@ -57,6 +57,9 @@ docs:
       - title: "Web"
         url: /web
         category: "Web"
+      - title: "Infra"
+        url: /infra
+        category: "Infra"
       - title: "Auth"
         url: /auth
         category: "Auth"
