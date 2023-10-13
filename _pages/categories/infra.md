@@ -4,7 +4,7 @@ permalink: infra
 title: "Infra"
 
 author_profile: true
-taxonomy: Web
+taxonomy: Infra
 sidebar:
   nav: "docs"
 ---
