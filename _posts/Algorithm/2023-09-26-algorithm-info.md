@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2023-09-26
-last_modified_at: 2023-09-26
+last_modified_at: 2023-10-16
 ---
 
 <br>
@@ -19,6 +19,7 @@ last_modified_at: 2023-09-26
 # **1. 풀이 아이디어**
 
 - 거리에 관한 문제 → bfs, dfs
+- 2진수 → 비트마스킹
 
 <br>
 
@@ -61,5 +62,9 @@ last_modified_at: 2023-09-26
 <br>
 
 **## 2) Java**
+
+- 이진수
+    - `Integer.toBinaryString(n);` : int n을 2진수로 변환한 값을 String으로 반환
+    - Integer.bitCount(n); : int n을 2진수로 변환한 값의 1의 개수를 반환
 
 <br>
