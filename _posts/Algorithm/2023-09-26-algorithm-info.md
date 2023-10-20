@@ -23,16 +23,16 @@ last_modified_at: 2023-10-20
 
 <br>
 
-**# 2. 주의사항**
+# **2. 주의사항**
 
 - pop할 때 : len == 0 확인
 - 0인 케이스 고려했는지 주의
 
 <br>
 
-**# 3. 메소드**
+# **3. 메소드**
 
-**## 1) Python**
+## **1) Python**
 
 - heapq
     - import heapq
@@ -75,7 +75,7 @@ last_modified_at: 2023-10-20
 
 <br>
 
-**## 2) Java**
+## **2) Java**
 
 - 이진수
     - `Integer.toBinaryString(n);` : int n을 2진수로 변환한 값을 String으로 반환
