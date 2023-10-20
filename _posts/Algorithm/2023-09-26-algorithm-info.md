@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2023-09-26
-last_modified_at: 2023-10-16
+last_modified_at: 2023-10-20
 ---
 
 <br>
@@ -58,6 +58,20 @@ last_modified_at: 2023-10-16
     
     >> [('candy', 500), ('coffee', 1000)]
     ```
+
+<br>
+
+- 이분탐색 : `bisect` 라이브러리
+    - `bisect_left(a, x)` : 배열 a의 정렬된 상태를 유지하면서 x를 삽입할 수 있는 가장 왼쪽 인덱스를 반환
+    - `bisect_right(a, x)` : 배열 a의 정렬된 상태를 유지하면서 x를 삽입할 수 있는 가장 오른쪽 인덱스를 반환
+
+<br>
+
+- 순열/조합 : `itertools` 라이브러리
+    - 순열 : `permutations([반복 가능 객체], r)`
+    - 조합 : `combination([반복 가능 객체], r)`
+    - 중복 순열 : `product([반복 가능한 객체], repeat=r)`
+    - 중복 조합 : `combinations_with_replacement([반복 가능한 객체], r)`
 
 <br>
 
