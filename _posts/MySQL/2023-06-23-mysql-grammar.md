@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2023-06-23
-last_modified_at: 2023-10-18
+last_modified_at: 2023-10-22
 ---
 
 <br>
@@ -51,10 +51,16 @@ last_modified_at: 2023-10-18
 
 # **2. 그 외 문법**
 
+<br>
+
 - **MAX(IF) :** `SELECT MAX(IF(조건, 1, 0))`
     - 모든 결과가 1이면 1, 0이면 0, 1, 0이 함께 존재하면 1 출력
     - 관련 문제 : [프로그래머스 자동차 대여 기록에서 대여중 / 대여 가능 여부 구분하기](https://school.programmers.co.kr/learn/courses/30/lessons/157340)
+- **누적합** : `SUM([대상]) OVER(PARTITION BY [단위] ORDER BY [정렬기준])`
+    - 그룹하지 않을거면 PARTITION BY 없이 정렬기준만 주면 됨
+    - 관련 문제 : [대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/151139)
 
+<br>
 <br>
 
 ---
@@ -65,6 +71,6 @@ last_modified_at: 2023-10-18
 
 - [[mysql] DATE_FORMAT - 날짜 형식 설정](https://devjhs.tistory.com/89)
 - [[Mysql] Mysql 조건문 - IF 문, CASE 문](https://redcow77.tistory.com/260)
-  
-<br>
+- [[SQL] Window Functions](https://velog.io/@12aeun/SQL-Window-Functions)
+
 <br>
