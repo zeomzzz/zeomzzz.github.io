@@ -1,7 +1,4 @@
-{% if include.id %}
-  {% assign feature_row = page[include.id] %}
-{% else %}
-  {% assign feature_row = page.feature_row %}
+e_row = page.feature_row %}
 {% endif %}
 
 <div class="feature__wrapper">
