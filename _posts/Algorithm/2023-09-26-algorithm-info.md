@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2023-09-26
-last_modified_at: 2023-10-20
+last_modified_at: 2023-11-04
 ---
 
 <br>
@@ -20,13 +20,28 @@ last_modified_at: 2023-10-20
 
 - 거리에 관한 문제 → bfs, dfs
 - 2진수 → 비트마스킹
+- 최단거리
+    - 한 노드에서 모든 노드까지의 최단 거리 -> Dijkstra
+    - 모든 노드를 잇는 최단 거리 -> MST (Minimum Segment Tree)
 
 <br>
 
 # **2. 주의사항**
 
+## **0) 공통**
+
 - pop할 때 : len == 0 확인
 - 0인 케이스 고려했는지 주의
+
+<br>
+
+## **1) Python**
+
+<br>
+
+## **2) Java**
+
+- int / int = int -> 최소 하나는 double로 casting
 
 <br>
 
@@ -80,5 +95,8 @@ last_modified_at: 2023-10-20
 - 이진수
     - `Integer.toBinaryString(n);` : int n을 2진수로 변환한 값을 String으로 반환
     - Integer.bitCount(n); : int n을 2진수로 변환한 값의 1의 개수를 반환
-
+- 반올림, 올림, 버림
+    - 반올림 : `Math.round(n);`
+    - 올림 : `Math.ceil(n);`
+    - 버림 : `Math.floor(n);`
 <br>
