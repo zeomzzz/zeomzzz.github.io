@@ -1,10 +1,10 @@
 ---
 layout: category
-permalink: auth
-title: "Auth"
+permalink: nosql
+title: "NoSQL"
 
 author_profile: true
-taxonomy: Auth
+taxonomy: NoSQL
 sidebar:
   nav: "docs"
 ---

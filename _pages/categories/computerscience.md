@@ -1,10 +1,10 @@
 ---
 layout: category
-permalink: datastructure
-title: "Data Structure"
+permalink: computerscience
+title: "Computer Science"
 
 author_profile: true
-taxonomy: Data Structure
+taxonomy: Computer Science
 sidebar:
   nav: "docs"
 ---

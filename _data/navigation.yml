@@ -34,35 +34,31 @@ docs:
     - title: "Java"
       url: /java
       category: "Java"
+    - title: "SQL"
+      url: /sql
+      category: "SQL"
+    - title: "NoSQL"
+      url: /nosql
+      category: "NoSQL"
   - title: Algorithm
     children:
     - title: "Algorithm"
       url: /algorithm
       category: "Algorithm"
-  - title: DB
-    children:
-    - title: "MySQL"
-      url: /mysql
-      category: "MySQL"
-  - title: CS
-    children:
-    - title: "Data Structure"
-      url: /datastructure
-      category: "Data Structure"
-    - title: "Database"
-      url: /database
-      category: "Database"
+    - title: "Problem Solving"
+      url: /problemsolving
+      category: "Problem Solving"
   - title: Others
     children:
+      - title: "Computer Science"
+        url: /computerscience
+        category: "Computer Science"
       - title: "Web"
         url: /web
         category: "Web"
       - title: "Infra"
         url: /infra
         category: "Infra"
-      - title: "Auth"
-        url: /auth
-        category: "Auth"
       - title: "Tools"
         url: /tools
         category: "Tools"

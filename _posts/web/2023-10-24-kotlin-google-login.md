@@ -3,7 +3,7 @@ title:  "Kotlin으로 구글 로그인"
 excerpt: ""
 
 categories:
-  - Auth
+  - Web
 tags:
   - [Auth, GAuth, Social Login]
 

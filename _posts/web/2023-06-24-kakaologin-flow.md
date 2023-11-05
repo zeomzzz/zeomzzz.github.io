@@ -3,7 +3,7 @@ title:  "카카오 로그인 흐름 정리"
 excerpt: "소셜 로그인 스터디 중 공유한 카카오 로그인 흐름 정리"
 
 categories:
-  - Auth
+  - Web
 tags:
   - [Auth, KAuth, Social Login]
 

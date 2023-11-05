@@ -3,7 +3,7 @@ title:  "OAuth 2.0 생활코딩"
 excerpt: "생활코딩 OAuth 2.0 필기"
 
 categories:
-  - Auth
+  - Web
 tags:
   - [Auth, OAuth, Lecture]
 

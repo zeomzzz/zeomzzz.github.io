@@ -1,10 +1,10 @@
 ---
 layout: category
-permalink: mysql
-title: "MySQL"
+permalink: problemsolving
+title: "Problem Solving"
 
 author_profile: true
-taxonomy: MySQL
+taxonomy: Problem Solving
 sidebar:
   nav: "docs"
 ---

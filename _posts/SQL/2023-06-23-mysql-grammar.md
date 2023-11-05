@@ -3,7 +3,7 @@ title:  "MySQL 문법 정리"
 excerpt: ""
 
 categories:
-  - MySQL
+  - SQL
 tags:
   - [DB, MySQL]
 

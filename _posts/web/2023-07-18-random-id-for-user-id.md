@@ -3,9 +3,9 @@ title:  "사용자에게 랜덤ID 부여하기 위한 난수 생성 (Java)"
 excerpt: ""
 
 categories:
-  - Database
+  - Web
 tags:
-  - [Database]
+  - [Web]
 
 toc: true
 toc_sticky: true

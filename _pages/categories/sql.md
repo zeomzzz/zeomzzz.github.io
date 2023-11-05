@@ -1,10 +1,10 @@
 ---
 layout: category
-permalink: database
-title: "Database"
+permalink: sql
+title: "SQL"
 
 author_profile: true
-taxonomy: Database
+taxonomy: SQL
 sidebar:
   nav: "docs"
 ---
