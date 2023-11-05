@@ -2,11 +2,13 @@
    TABLES
    ========================================================================== */
 
+$tableFont: "GothicA1-Light";
+
 table {
   display: block;
   margin-bottom: 1em;
   width: 100%;
-  font-family: $global-font-family;
+  font-family: $tableFont;
   font-size: 1em;
   border-collapse: collapse;
   overflow-x: auto;
