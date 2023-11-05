@@ -130,7 +130,7 @@ sudo ufw enable // 방화벽 활성화
         - `/etc/nginx` 까지 완벽하게 삭제해야 함
     - 설치 완료 후 서버 url로 접속하면 나오는 화면
         
-        ![]({{ site.url }}{{ site.baseurl }}/assets/images/infra/cicd-01-ec2-setting/01.png ){: .align-center}
+        ![]({{ site.url }}{{ site.baseurl }}./01.png ){: .align-center}
         
 - 필요한 경우 리버스 프록시 설정
 
