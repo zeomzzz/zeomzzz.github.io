@@ -4,6 +4,7 @@
 
 $customFont: "GothicA1-Light";
 $codeBlockFont: "Nanum-Gothic-Coding";
+$descriptSpanFont: "Minhye";
 
 #main {
   @include clearfix;
@@ -38,6 +39,12 @@ body {
 .initial-content,
 .search-content {
   flex: 1 0 auto;
+}
+
+.descipt-font {
+  font-family: $descriptSpanFont; // <div class="descipt-font"> </div>
+  font-size: 1.3rem;
+  margin: 1.5rem;
 }
 
 .page {

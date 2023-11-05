@@ -16,6 +16,13 @@ last_modified_at: 2023-10-24
 
 <br>
 
+<div class="descipt-font">
+안드로이드 앱 프로젝트를 진행하며 로그인 및 회원가입 API를 개발하기 전에 클라이언트에서 받을 수 있는 반환값을 확인하기 위하여 Kotlin을 이용해 구글 로그인을 구현해보았다. <br>
+xml과 kotlin 코드가 분리되어있고, gradle 빌드를 하는 점에서 프론트엔드 프레임워크인 Vue.js나 React보다는 백엔드 프레임워크인 SpringBoot와 비슷하게 느껴졌다. 
+</div>
+
+<br>
+
 ## **0. 사전 작업**
 
 ### **1) Android 프로젝트에 Firebase 추가**
