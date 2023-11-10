@@ -37,41 +37,41 @@ last_modified_at: 2023-11-10
 
 # **3. 해결 방법**
 
-- 서버를 빌드할 때 Redis도 다시 실행하지 않도록 Redis docker-compose를 서버 docker-compose와 분리해서 ec2 내의 다른 위치에 저장했다.
+- 서버를 빌드할 때 Redis도 다시 실행하지 않도록 Redis docker-compose를 서버 docker-compose와 분리해서 <br> ec2 내의 다른 위치에 저장했다.
     - 동일 디렉토리 내에 저장하여 `.env`를 공유하도록 했다.
         - docker-compose.yml
             
             ```yaml
             services:
-            		gunpang:
-            				build: .
-                    container_name: [서버 Container 이름]
-                    environment:
-            						DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-                        DATABASE_URL: ${DATABASE_URL}
-                        DATABASE_USERNAME: ${DATABASE_USERNAME}
-                        JWT_SECRET: ${JWT_SECRET}
-                        REDIS_HOST: ${REDIS_HOST}
-                        REDIS_PORT: ${REDIS_PORT}
-                        REDIS_PASSWORD: ${REDIS_PASSWORD}
-                        TZ: Asia/Seoul
-            				ports:
+            	[service 이름]:
+            			build: .
+                        container_name: [서버 Container 이름]
+                        environment:
+            				DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+                            DATABASE_URL: ${DATABASE_URL}
+                            DATABASE_USERNAME: ${DATABASE_USERNAME}
+                            JWT_SECRET: ${JWT_SECRET}
+                            REDIS_HOST: ${REDIS_HOST}
+                            REDIS_PORT: ${REDIS_PORT}
+                            REDIS_PASSWORD: ${REDIS_PASSWORD}
+                            TZ: Asia/Seoul
+        				ports:
             		        - "${BACK_PORT}:${BACK_PORT}"
-                    restart: always
+                        restart: always
             ```
             
         - docker-compose-redis.yml
             
             ```yaml
             services:
-            		redis:
-            			  image: redis:latest
+            	redis:
+            		image: redis:latest
                     container_name: [Redis Container 이름]
                     restart: always
                     ports:
-            		        - [Redis Port]:6379
+            		    - [Redis Port]:6379
                     environment:
-            		        - REDIS_PASSWORD=${REDIS_PASSWORD}
+            		    - REDIS_PASSWORD=${REDIS_PASSWORD}
                         - TZ=Asia/Seoul
             ```
             
