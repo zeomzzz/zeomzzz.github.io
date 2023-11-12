@@ -20,12 +20,31 @@ last_modified_at: 2023-11-12
 
 - JWT : JSON Web Token
     - JSON : Key, Value가 한 쌍을 이루는 객체
+    - [공식 사이트](https://jwt.io/)
 - 사용하는 이유 Cookie와 Session 기반 인증의 단점을 보완
     - Cookie
-        - 브라우저가 종료되어도 만료 시점이 지나면 자동삭제 되지 않음
+        - 단점
+            - 브라우저가 종료되어도 만료 시점이 지나면 자동삭제 되지 않음
     - Session
-        - 유저의 인증 정보를 서버에 저장하여 서버가 Stateful 해야 함
-        - 유저의 수가 증가하면 서버의 램이 과부하됨
+        - 인증정보는 서버에 저장하고, 클라이언트 쿠키에 JSESSIONID를 저장. 요청을 보낼 때 JSESSIONID가 포함된 쿠키를 함께 보냄
+        - 단점
+            - 유저의 인증 정보를 서버에 저장하여 서버가 Stateful 해야 함
+            - 유저의 수가 증가하면 서버의 부하가 심해짐
+- JWT의 장/단점
+    - 장점
+        - Stateless 하여 서버 확장성(Scalability)가 있음
+        - 보안성 : 쿠키 탈취 및 위조로 인한 취약점 사라짐
+        - 확장성 : 로그인 정보가 사용되는 분야가 확장됨 ex. OAuth
+    - 단점
+        - 토큰의 길이가 길어서 인증 요청이 많아지면 네트워크 부하가 증가
+        - Payload는 암호화되지 않아 유저의 민감한 정보는 담지 못함
+        - 토큰 탈취시 대처가 어려움
+            - 한 번 발급된 토큰은 유효기간이 만료될 때까지 계속 사용 가능
+            - 서버에서 삭제할 수 있는 쿠키/세션과 달리 특정 사용자의 접속을 강제로 만료하기 어려움
+    - 단점 극복 방안
+        - Refresh Token 활용
+            - 클라이언트가 요청시 사용하는 Access Token의 만료 기간을 짧게 설정하고, Refresh Token을 이용해 Access Token 재발급
+
 
 <br>
 
@@ -64,7 +83,7 @@ HEADER.PAYLOAD.SIGNATURE
 }
 ```
 
-- 중요한 정보는 Payload에 담으면 안됨
+- 민감한 정보는 Payload에 담으면 안됨
     - Base64로 인코딩되어 누구나 디코딩할 수 있음
 - Claim
     - Payload의 Key, Value로 된 각각의 쌍
@@ -102,6 +121,7 @@ HMACSHA256(
 - Header(Base64로 인코딩) + “.” + Payload(Base64로 인코딩)
 - Secret
 - 이 정보를 Base64로 인코딩
+- HMAC : Secret Key를 포함하는 암호화 방식
 
 <br>
 
@@ -109,6 +129,7 @@ HMACSHA256(
 
 - 요청 Header의 Authorization에 담으며, Type을 같이 적어줌
 - Type은 일반적으로 Bearer을 사용
+- 클라이언트의 JWT 저장 장소 : LocalStorage
 
 <br>
 
