@@ -18,7 +18,7 @@ last_modified_at: 2023-11-25
 
 # **1. 문제 상황**
 
-- JWT Interceptor 적용 후 swagger에 접속하면 오류 메시지가 뜨고 접속할 수 없음
+- JWT Interceptor 적용 후 Swagger에 접속하면 오류 메시지가 뜨고 접속할 수 없음
     
     ![]({{ site.url }}{{ site.baseurl }}/assets/images/web/jwt-interceptor-swagger/01.png ){: .align-center}
     
@@ -26,8 +26,8 @@ last_modified_at: 2023-11-25
 
 # **2. 원인 파악**
 
-- swagger를 포함한 모든 경로에서 JWT Interceptor가 동작하고 있었다
-    - swagger 접속시에 JWT Interceptor에 작성해둔 로그가 찍힘
+- Swagger를 포함한 모든 경로에서 JWT Interceptor가 동작하고 있었다
+    - Swagger 접속시에 JWT Interceptor에 작성해둔 로그가 찍힘
         
         ![]({{ site.url }}{{ site.baseurl }}/assets/images/web/jwt-interceptor-swagger/02.png ){: .align-center}
         
@@ -35,7 +35,7 @@ last_modified_at: 2023-11-25
 
 # **3. 해결 방법**
 
-- WebConfig에 Interceptor를 등록할 때 swagger 경로를 제외한다
+- WebConfig에 Interceptor를 등록할 때 Swagger 경로를 제외한다
 - 로그를 출력해서 요청이 가고 있는 경로를 확인 한 후 관련된 경로를 제외하였다
 
 <br>
@@ -53,13 +53,21 @@ throws Exception {
 }
 ```
 
-- 확인한 경로들 : `"/docs/swagger-ui/**", "/swagger-ui/**", "/docs/swagger-config/**", "/docs/main/**"`
+- 확인한 경로들 : `"/docs/swagger-ui/**"`, `"/swagger-ui/**"`, `"/docs/swagger-config/**"`, `"/docs/main/**"`
     
     ![]({{ site.url }}{{ site.baseurl }}/assets/images/web/jwt-interceptor-swagger/03.png ){: .align-center}
     
+    <br>
+
+    > 💡 **Swagger URI 패턴**
+    >
+    >- `/docs/swagger-ui/**`,  `/swagger-ui/**` : Swagger UI 리소스 제공
+    >- `/docs/swagger-config/**` : Swagger 설정 파일에 접근
+    >- `/docs/main/**` : Swagger 문서에 접근
+
 <br>
 
-## **2) Interceptor 등록할 때 swagger 경로 제외**
+## **2) Interceptor 등록할 때 Swagger 경로 제외**
 
 ```java
 @Override
@@ -72,7 +80,7 @@ public void addInterceptors(InterceptorRegistry registry) {
 
 <br>
 
-## **3) swagger 접속하여 확인**
+## **3) Swagger 접속하여 확인**
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/images/web/jwt-interceptor-swagger/04.png ){: .align-center}
 
