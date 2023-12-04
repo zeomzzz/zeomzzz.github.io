@@ -5,13 +5,13 @@ excerpt: ""
 categories:
   - Computer Science
 tags:
-  - [Network, Http]
+  - [Network, Http, IP, TCP, UDP, Port]
 
 toc: true
 toc_sticky: true
  
 date: 2023-11-26
-last_modified_at: 2023-11-26
+last_modified_at: 2023-12-04
 ---
 
 <br>
@@ -62,6 +62,7 @@ last_modified_at: 2023-11-26
 
 → 이 문제들을 TCP가 해결해 줌!
 
+<br>
 <br>
 
 # **2. TCP, UDP**
@@ -145,7 +146,7 @@ ex. 채팅 프로그램
         - 순서 보장 X
     - IP와 거의 같으나, **PORT**, 체크섬 정도가 추가 됨
         - PORT : 하나의 IP에서 여러 애플리케이션을 사용할 때(게임, 음악 등) 어떤 애플리케이션의 패킷인지 구분하는 역할
-        - 체크섬 : 이 메세지에 대해 맞는지 검증해주는 데이터
+        - checksum : 네트워크를 통해서 전송된 데이터의 값이 변경되었는지(무결성) 검사하는 값
 - 장점 : 데이터 전달 및 순서가 보장되지 않지만, 단순하고 빠름
     - TCP의 단점
         - 전송 속도를 최적화할 수 없고 데이터 양도 많아짐
@@ -153,4 +154,44 @@ ex. 채팅 프로그램
         
 - 애플리케이션에서 추가 작업 필요
 
+<br>
+<br>
+
+# **3. PORT**
+
+<br>
+
+- 역할 : 같은 IP 내에서 프로세스를 구분
+    - 클라이언트에서 한번에 둘 이상의 서버와 연결 할때 구분하기 위해 사용
+- TCP/IP 패킷 정보에 출발지 port와 목적지 port가 포함됨
+- 0~65535 할당 가능
+    - 0~1023 : 잘 알려진 포트, 사용하지 않는 것이 좋음
+        - FTP : 20, 21
+        - TELNET : 23
+        - HTTP : 80
+        - HTTPS : 443
+
+<br>
+<br>
+
+# **4. DNS**
+
+## **IP의 문제점**
+
+- 기억하기 어려움
+- 변경될 수 있음 -> 변경되면 접근할 수 없음
+
+<br>
+
+## **DNS**
+
+- 도메인 네임 시스템 (Domain Name System)
+    
+    <p align="center">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/images/computerscience/http-01/03.png" width="650px">
+    </p>
+    
+    - 도메인 명을 IP주소로 변환
+
+<br>
 <br>
