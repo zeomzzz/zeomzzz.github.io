@@ -63,3 +63,94 @@ last_modified_at: 2023-11-26
 → 이 문제들을 TCP가 해결해 줌!
 
 <br>
+
+# **2. TCP, UDP**
+
+## **인터넷 프로토콜 스택의 4계층**
+
+- 애플리케이션 계층 - HTTP, FTP
+- 전송 계층 - TCP, UDP
+- 인터넷 계층 - IP
+- 네트워크 인터페이스 계층 : LAN 카드 등
+
+ex. 채팅 프로그램
+1. 프로그램이 **메시지 생성** : 'Hello World!' <br>
+2. SOCKET 라이브러리를 통해 메시지 전달 : ‘Hello’라는 메시지 전달 <br>
+3. **TCP 정보 생성**, 메시지 데이터 포함 : ‘Hello’라는 메시지에 TCP 정보를 씌움 <br>
+4. **IP 패킷 생성**, TCP 데이터 포함 : IP와 관련된 데이터를 씌움 <br>
+5. LAN카드로 서버에 보냄(**Ethernet frame**) : LAN 카드를 통해서 나갈 때 Ethernet frame이 포함되어 나감
+
+<br>
+
+## **TCP/IP 패킷 정보**
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/computerscience/http-01/01.png" width="650px">
+</p>
+
+- IP 패킷 정보 안에 TCP 패킷 정보가 있음
+- TCP 세그먼트: 출발지 port, 목적지 port, **전송 제어, 순서, 검증 정보** 등
+
+<br>
+
+## **TCP 특징**
+
+- TCP : 전송 제어 프로토콜 (Transmission Control Protocol)
+    - 신뢰할 수 있는 프로토콜
+    - 현재는 대부분 TCP 사용
+    - TCP 세그먼트의 **전송 제어, 순서, 검증 정보** 덕분에 아래 세 가지 특징이 가능함
+
+<br>
+
+① 연결지향
+
+- TCP 3 way handshake(가상 연결)
+    
+    >💡 **TCP 3 way handshake**
+    >
+    ><p align="center">
+    ><img src="{{ site.url }}{{ site.baseurl }}/assets/images/computerscience/http-01/02.png" width="400px">
+    ></p>
+    >
+    >- 이를 통해 클라이언트와 서버가 서로를 신뢰할 수 있음
+    >- 1,2,3 : connect 과정 / SYN : 접속 요청(Synchronize), ACK : 요청 수락
+    >1. 클라이언트 -> 서버 : SYN
+    >2. 서버 -> 클라이언트 : SYN + ACK
+    >3. 클라이언트 -> 서버 : ACK
+    >4. 클라이언트에서 서버로 데이터 전송
+
+    - 그러나 물리적 연결이 아닌 개념적/논리적 연결임
+
+<br>
+
+② 데이터 전달 보증
+
+- 패킷 전달 누락을 알 수 있음
+- 클라이언트가 서버로 데이터 전송을 하면 서버는 클라이언트로 데이터 잘 받았다고 응답
+
+<br>
+
+③ 순서 보장
+
+- 순서가 맞지 않으면 다시 보내라고 요청을 보냄
+
+<br>
+
+## **UDP 특징**
+
+- 사용자 데이터그램 프로토콜 (User Datagram Protocol)
+    - 하얀 도화지에 비유. 기능 거의 X
+        - 연결지향(TCP 3 way handshake) X
+        - 데이터 전달 보증 X
+        - 순서 보장 X
+    - IP와 거의 같으나, **PORT**, 체크섬 정도가 추가 됨
+        - PORT : 하나의 IP에서 여러 애플리케이션을 사용할 때(게임, 음악 등) 어떤 애플리케이션의 패킷인지 구분하는 역할
+        - 체크섬 : 이 메세지에 대해 맞는지 검증해주는 데이터
+- 장점 : 데이터 전달 및 순서가 보장되지 않지만, 단순하고 빠름
+    - TCP의 단점
+        - 전송 속도를 최적화할 수 없고 데이터 양도 많아짐
+        -> TCP는 손을 못대기 때문에 UDP 위에 내가 원하는 것을 만들 수 있음 ex. http3에서 UDP protocol 사용
+        
+- 애플리케이션에서 추가 작업 필요
+
+<br>
