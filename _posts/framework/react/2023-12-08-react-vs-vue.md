@@ -16,9 +16,31 @@ last_modified_at: 2023-12-08
 
 <br>
 <div class="descipt-font">
-가장 많이 사용하는 프론트엔드 툴 React.js와 Vue.js! <br> 그 차이를 한 번 정리해보았다.
+가장 많이 사용하는 프론트엔드 툴 React.js와 Vue.js! <br> 두 가지 툴을 비교해보았다.
 </div>
 <br>
+
+# **공통점**
+
+- 컴포넌트 기반
+    - 컴포넌트(Component) : 유저가 사용하는 시스템에 대한 조작 장치
+        
+        ex. page, header bar, footer bar, navbars, button, form
+        
+- Virtual DOM 방식
+    - 실제 돔에 접근하여 조작하지 않고, 이를 추상화시킨 자바스크립트 객체를 이용해 사용
+    - 따라서 빠른 렌더링이 가능함
+
+- Server Side Rendering
+    - 서버에서 페이지를 그려 클라이언트로 보낸 후 화면에 표시함
+    - 단점
+        - Node.js 환경에서 실행되어 Node.js 웹 애플리케이션 실행 방법을 알아야 함
+        - 라이프사이클 훅과는 다른 환경(브라우저가 아닌 Node.js)에서 동작하기 때문에 `beforeCreate`와 `created`에서 `window`나 `document`와 같은 브라우저 객체에 접근할 수 없음
+
+<br>
+<br>
+
+# **차이점**
 
 ## **1. React는 라이브러리, Vue는 프레임워크이다**
 
@@ -140,5 +162,6 @@ ex. button을 조건에 따라 보이고, 보이지 않게 설정하기
 - [리액트(React.js) vs 뷰(Vue.js)](https://nyol.tistory.com/148)
 - [React vs Vue 장단점 비교](https://velog.io/@leehaeun0/React-vs-Vue-%EC%9E%A5%EB%8B%A8%EC%A0%90-%EB%B9%84%EA%B5%90)
 - [[Vue] Vue & React의 차이와 장단점](https://koras02.tistory.com/218)
+- [서버 사이드 렌더링이란?](https://joshua1988.github.io/vue-camp/nuxt/ssr.html#%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3-%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC)
 
 <br>
