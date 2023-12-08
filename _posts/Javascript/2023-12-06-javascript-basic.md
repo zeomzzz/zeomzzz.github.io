@@ -361,6 +361,79 @@ getArea(); // 200
 - 호이스팅의 대상 X
 
 <br>
+<br>
+
+# **8. 콜백함수**
+
+- 다른 함수의 매개변수로 넘겨준 함수
+
+ex. 
+
+```jsx
+function checkMood(mood, goodCallback, badCallback) {
+  if (mood === "good") {
+    goodCallback();
+  } else {
+    badCallback();
+  }
+}
+
+function cry() {
+  console.log("ACTION :: CRY");
+}
+
+function sing() {
+  console.log("ACTION :: SING");
+}
+
+function dance() {
+  console.log("ACTION :: DANCE");
+}
+
+checkMood("sad", sing, cry);
+```
+
+- checkMood 함수에 매개변수로 goodCallback, badCallback이라는 함수를 넘겨줌
+
+<br>
+<br>
+
+# **9. 객체**
+
+- Non-Primitive Type의 자료형에 해당함
+
+<br>
+
+## **객체 만들기**
+
+① 객체 생성자 이용
+
+```jsx
+let person = new Object();
+```
+
+<br>
+
+② 객체 리터럴 방식
+
+- 중괄호를 이용해서  key-value 쌍(프로퍼티)의 형태로 객체를 만듦
+    
+    ```jsx
+    let person = {
+      key1: "value1", // 프로퍼티 (객체 프로퍼티)
+      key2: "value2"
+    };
+    ```
+    
+    - 다른 자료형을 넣어도 상관 없음
+    - 점표기법(`[객체이름].[프로퍼티이름]`)으로 프로퍼티의 값에 접근할 수 있음
+        
+        ```jsx
+        person.key1;
+        ```
+
+<br>
+<br>
 
 ---
 
