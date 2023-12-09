@@ -426,11 +426,46 @@ let person = new Object();
     ```
     
     - 다른 자료형을 넣어도 상관 없음
-    - 점표기법(`[객체이름].[프로퍼티이름]`)으로 프로퍼티의 값에 접근할 수 있음
-        
-        ```jsx
-        person.key1;
-        ```
+
+<br>
+<br>
+
+## **객체 프로퍼티에 접근하기**
+
+① 점표기법(`[객체이름].[프로퍼티이름]`)
+
+```jsx
+person.key1;
+```
+
+- 없는 프로퍼티에 접근하면 `undefined`
+
+<br>
+
+② 괄호표기법 (`[객체이름][["프로퍼티이름"]]`)
+
+```jsx
+person.["key1"];
+```
+
+- 반드시 프로퍼티의 key를 문자열 형태로
+    - `“”`를 이용하지 않으면 변수로 인식
+- 동적인 파라미터를 전달받는 상황에 유리함
+    
+    ex. key를 통해서 value를 받아오는 함수가 필요할 때 용이함
+    
+    ```jsx
+    let person = {
+      key1: "value1",
+      key2: "value2"
+    };
+    
+    console.log(getPropertyValue("key1"));
+    
+    function getPropertyValue(key) {
+      return person[key];
+    }
+    ```
 
 <br>
 <br>
