@@ -425,46 +425,464 @@ let person = new Object();
     };
     ```
     
-    - 다른 자료형을 넣어도 상관 없음
+
+- 프로퍼티에 다른 자료형을 넣어도 상관 없음 ex. 함수
+- 함수가 아닌 프로퍼티를 **멤버**, 함수인 프로퍼티를 **메서드**라고 함
 
 <br>
 <br>
 
 ## **객체 프로퍼티에 접근하기**
 
-① 점표기법(`[객체이름].[프로퍼티이름]`)
-
-```jsx
-person.key1;
-```
-
-- 없는 프로퍼티에 접근하면 `undefined`
-
-<br>
-
-② 괄호표기법 (`[객체이름][["프로퍼티이름"]]`)
-
-```jsx
-person.["key1"];
-```
-
-- 반드시 프로퍼티의 key를 문자열 형태로
-    - `“”`를 이용하지 않으면 변수로 인식
-- 동적인 파라미터를 전달받는 상황에 유리함
+- 기본 접근 방법
     
-    ex. key를 통해서 value를 받아오는 함수가 필요할 때 용이함
+    ① 점표기법(`[객체이름].[프로퍼티이름]`)
+    
+    ```jsx
+    person.key1;
+    ```
+    
+    - 없는 프로퍼티에 접근하면 `undefined`
+    
+    
+    ② 괄호표기법 (`[객체이름][["프로퍼티이름"]]`)
+    
+    ```jsx
+    person.["key1"];
+    ```
+    
+    - 반드시 프로퍼티의 key를 문자열 형태로
+        - `“”`를 이용하지 않으면 변수로 인식
+    - 동적인 파라미터를 전달받는 상황에 유리함
+        
+        ex. key를 통해서 value를 받아오는 함수가 필요할 때 용이함
+        
+        ```jsx
+        let person = {
+          key1: "value1",
+          key2: "value2"
+        };
+        
+        console.log(getPropertyValue("key1"));
+        
+        function getPropertyValue(key) {
+          return person[key];
+        }
+        ```
+        
+
+- 프로퍼티에서 다른 프로퍼티에 접근하기
     
     ```jsx
     let person = {
-      key1: "value1",
-      key2: "value2"
+      name: "zeomzzz",
+      age: 100,
+      say: function () {
+        console.log(`Hello ${this["name"]}`);
+      }
     };
     
-    console.log(getPropertyValue("key1"));
+    person.say(); // Hello zeomzzz
+    ```
     
-    function getPropertyValue(key) {
-      return person[key];
-    }
+    - Template literal 이용
+    - this : 객체 자신
+
+- 존재하는 프로퍼티인지 확인 : `[프로퍼티 이름] in [객체 이름]`
+
+<br>
+<br>
+
+## **프로퍼티 추가, 수정, 삭제**
+
+```jsx
+let person = {
+  name: "zeomzzz",
+  age: 100
+};
+
+// 프로퍼티 추가
+// 점표기법 이용
+person.location = "한국";
+// 괄호표기법 이용
+person["gender"] = "Unknown";
+
+console.log(person); // {name: "zeomzzz", age: 100, location: "한국", gender: "Unknown"}
+
+// 프로퍼티 수정
+person.name = "zeomz";
+person["age"] = 999;
+console.log(person); // {name: "zeomz", age: 999, location: "한국", gender: "Unknown"}
+
+// 프로퍼티 삭제
+// 1. delete
+delete person.age;
+delete person["gender"];
+console.log(person); // {name: "zeomz", location: "한국"}
+
+// 2. (추천) value를 null 로 변경
+person.name = null;
+console.log(person); // {name: null, location: "한국"}
+```
+
+- 삭제
+    - delete : 객체와 프로퍼티 간의 연결 관계를 끊는 것이지 실제로 프로퍼티를 메모리에서 삭제하지는 않음
+    - value를 null로 변경 : 삭제한 효과를 내면서도 value를 메모리에서 삭제
+
+
+>💡 **객체를 const로 선언하였을 때에도 수정, 삭제 가능**
+>
+>- person이 갖는 Object를 수정하는 것이지, person이라는 상수 자체를 수정하는 행위가 아니기 때문
+>    - person이라는 상수 자체를 수정한다 : 대입 연산자를 이용해 새로운 객체를 할당
+
+<br>
+<br>
+
+## **그 외의 객체 관련 메서드**
+
+```jsx
+let person = {
+  name: "zeomzzz",
+  age: 100,
+  tall: 200
+};
+
+// keys to array
+const personKeys = Object.keys(person);
+console.log(personKeys); // ["name", "age", "tall"]
+
+// values to array
+const personValues = Object.values(person);
+console.log(personValues); // ["zeomzzz", 100, 200]
+```
+
+<br>
+<br>
+
+# **10. 배열**
+
+- 비원시 자료형에 해당
+- 순서 있는 요소들의 집합
+
+<br>
+<br>
+
+## **배열 만들기**
+
+```jsx
+let arr1 = new Array(); // 생성자 이용
+let arr2 = []; // 배열 리터럴 이용
+
+let arr = [1, 2, 3, 4];
+console.log(arr); // [1, 2, 3, 4]
+```
+
+- 어느 자료형이든 배열에 들어갈 수 있음
+    
+    ```jsx
+    let arr = [1, "2", true, null, undefined, {}, [], function () {}];
+    ```
+    
+<br>
+<br>
+
+## **배열의 값 다루기**
+
+```jsx
+let arr = [1, 2, 3, 4, 5];
+
+// 값에 접근 : 인덱스 이용
+console.log(arr[0]); // 1
+console.log(arr[1]); // 2
+console.log(arr[2]); // 3
+
+// 값 추가
+arr.push(6); // 맨 뒤에 추가
+console.log(arr); // [1, 2, 3, 4, 5, 6]
+
+// 배열의 길이
+console.log(arr.length); // 6
+```
+
+<br>
+<br>
+
+# **11. 반복문**
+
+- 특정 명령을 반복해서 사용할 수 있도록 도와주는 문법
+
+```jsx
+const arr = [1, 2, 3, 4];
+
+// for 문
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+// 객체 순회
+let person = {
+  name: "zeomzzz",
+  age: 100,
+  tall: 200
+};
+
+for (let i = 0; i < personKeys.length; i++) {
+  const curKey = personKeys[i];
+  const curValue = person[curKey];
+
+  console.log(`${curKey} : ${curValue}`);
+}
+```
+
+<br>
+<br>
+
+# **12. 배열 내장 함수**
+
+## **forEach**
+
+```jsx
+const arr = [1, 2, 3, 4];
+
+arr.forEach((elm) => console.log(elm));
+// 1
+// 2
+// 3
+// 4
+```
+
+<br>
+<br>
+
+## **map**
+
+- 배열의 각 내장함수에 대해서 콜백함수를 한 번 씩 실행하여 배열을 반환
+    
+    ```jsx
+    const arr = [1, 2, 3, 4];
+    
+    const newArr1 = arr.map((elm) => {
+      return elm * 2;
+    });
+    
+    console.log(newArr1); // [2, 4, 6, 8]
+    ```
+
+<br>
+<br>
+
+## **includes**
+
+- 배열에 값이 존재하는지 확인 (===)
+    
+    ```jsx
+    const arr = [1, 2, 3, 4];
+    
+    // 배열에 값이 존재하는지 확인 (===)
+    let number = 3;
+    let string = "3";
+    
+    console.log(arr.includes(number)); // true
+    console.log(arr.includes(string)); // false
+    ```
+
+<br>
+<br>   
+
+## **indexOf**
+
+- 배열에 값이 존재하면 인덱스를, 없으면 -1을 반환
+    
+    ```jsx
+    const arr = [1, 2, 3, 4];
+    
+    // 배열에 값이 존재하는지 확인 (===)
+    let number = 3;
+    let string = "3";
+    
+    // 베열에 값이 존재할 때의 인덱스 : 없으면 -1
+    console.log(arr.indexOf(string)); // -1
+    console.log(arr.indexOf(number)); // 2
+    ```
+
+<br>
+<br>   
+
+## **findIndex**
+
+- 콜백함수가 true를 반환하는 첫번째 요소의 인덱스를 반환
+    
+    ```jsx
+    const arr = [
+      { color: "red" },
+      { color: "black" },
+      { color: "blue" },
+      { color: "green" }
+    ];
+    
+    console.log(arr.findIndex((elm) => elm.color === "green")); // 3
+    ```
+    
+<br>
+<br>
+
+## **find**
+
+- 콜백함수가 true를 반환하는 첫번째 요소를 반환
+    
+    ```jsx
+    const arr = [
+      { color: "red" },
+      { color: "black" },
+      { color: "blue" },
+      { color: "green" }
+    ];
+    
+    console.log(arr.find((elm) => elm.color === "green")); // {color: "green"}
+    ```
+    
+<br>
+<br>
+
+## **filter**
+
+- 콜백함수가 true를 반환하는 모든 요소를 배열로 반환
+    
+    ```jsx
+    const arr = [
+      { num: 1, color: "red" },
+      { num: 2, color: "black" },
+      { num: 3, color: "blue" },
+      { num: 4, color: "green" },
+      { num: 5, color: "blue" }
+    ];
+    
+    console.log(arr.filter((elm) => elm.color === "blue"));
+    // [Object, Object]
+    // 0: Object
+    // num: 3
+    // color: "blue"
+    // 1: Object
+    // num: 5
+    // color: "blue"]
+    ```
+    
+<br>
+<br>
+
+## **slice(begin, end)**
+
+- 배열에서 인덱스가 begin에서 end-1까지인 요소를 반환
+    
+    ```jsx
+    const arr = [
+      { num: 1, color: "red" },
+      { num: 2, color: "black" },
+      { num: 3, color: "blue" },
+      { num: 4, color: "green" },
+      { num: 5, color: "blue" }
+    ];
+    
+    console.log(arr.slice(0, 2));
+    // [Object, Object]
+    // 0: Object
+    // num: 1
+    // color: "red"
+    // 1: Object
+    // num: 2
+    // color: "black"
+    ```
+
+<br>    
+<br>
+
+## **concat**
+
+- 배열을 연결하여 하나의 배열을 반환
+    
+    ```jsx
+    const arr1 = [
+      { num: 1, color: "red" },
+      { num: 2, color: "black" }
+    ];
+    
+    const arr2 = [
+      { num: 3, color: "blue" },
+      { num: 4, color: "green" },
+      { num: 5, color: "blue" }
+    ];
+    
+    console.log(arr1.concat(arr2));
+    
+    // [Object, Object, Object, Object, Object]
+    // 0: Object
+    // num: 1
+    // color: "red"
+    // 1: Object
+    // num: 2
+    // color: "black"
+    // 2: Object
+    // num: 3
+    // color: "blue"
+    // 3: Object
+    // num: 4
+    // color: "green"
+    // 4: Object
+    // num: 5
+    // color: "blue"
+    ```
+
+<br>
+<br>
+
+## **sort**
+
+- 문자열을 기준으로 정렬
+    
+    ```jsx
+    let chars = ["가", "라", "다"];
+    chars.sort();
+    console.log(chars); // ["가", "다", "라"]
+    
+    let numbers = [0, 2, 30, 4, 25, 1];
+    numbers.sort();
+    console.log(numbers); // [0, 1, 2, 25, 30, 4]
+    ```
+    
+- 숫자를 정렬할 때는 직접 비교함수를 생성하여 정렬
+    
+    ```jsx
+    let numbers = [0, 2, 30, 4, 25, 1];
+    
+    const compare = (a, b) => {
+      if (a > b) {
+        return 1; // a가 뒤로
+      }
+    
+      if (a < b) {
+        return -1; // a가 앞으로
+      }
+    
+      return 0; // 자리를 바꾸지 않음
+    };
+    
+    numbers.sort(compare);
+    
+    console.log(numbers); // [0, 1, 2, 4, 25, 30]
+    ```
+    
+<br>
+<br>
+
+## **join**
+
+- 배열 내 요소를 합친 문자열을 반환
+    
+    ```jsx
+    const arr = ["hello", "nice", "to", "meet", "you"];
+    
+    console.log(arr.join()); // hello,nice,to,meet,you
+    console.log(arr.join(" ")); // hello nice to meet you
     ```
 
 <br>
