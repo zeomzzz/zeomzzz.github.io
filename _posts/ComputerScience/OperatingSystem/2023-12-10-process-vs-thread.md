@@ -238,6 +238,7 @@ class RamenCook extends Thread implements Runnable
 
 <div class="descipt-font">
 그렇다면 멀티프로세싱과 멀티스레딩은 무엇일까?
+-> [멀티 프로세스와 멀티 스레드](https://zeomzzz.github.io/computer%20science/multi-process-vs-multi-thread/)
 </div>
 
 <br>
