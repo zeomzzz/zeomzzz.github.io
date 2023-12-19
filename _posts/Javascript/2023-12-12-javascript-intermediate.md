@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2023-12-12
-last_modified_at: 2023-12-12
+last_modified_at: 2023-12-19
 ---
 
 <br>
@@ -55,6 +55,70 @@ last_modified_at: 2023-12-12
     const name = getName(person);
     console.log(name);
     ```
+
+<br>
+<br>
+
+# **2. 삼항 연산자**
+
+<br>
+
+- 삼항 연산자를 이용해서 조건식을 간단하게 작성할 수 있음
+- 형식 : `[조건] ? [참일 때 수행] : [거짓일 때 수행]`
+    
+    ```java
+    let a = 3;
+    a >= 0 ? console.log("양수") : console.log("음수"); // 양수
+    ```
+    
+    ```java
+    let a = [];
+    
+    if (a.length === 0) {
+      console.log("빈 배열");
+    } else {
+      console.log("안 빈 배열");
+    } // 안 빈 배열
+    
+    a.length === 0 ? console.log("빈 배열") : console.log("안 빈 배열"); // 안 빈 배열
+    ```
+    
+- 변수에 삼항연산자의 결과를 저장해서 사용할 수 있음
+    
+    ```java
+    let a = [];
+    
+    const arrayStatus = a.length === 0 ? "빈 배열" : "안 빈 배열";
+    console.log(arrayStatus);
+    ```
+    
+- truthy와 falsy 이용하기
+    
+    ```java
+    let a;
+    
+    const result = a ? true : false;
+    console.log(result); // true
+    
+    let a = [];
+    
+    const result = a ? true : false;
+    console.log(result); // false
+    ```
+    
+- 삼항연산자 중첩해서 사용하기
+    
+    ```java
+    let score = 100;
+    
+    score >= 90
+      ? console.log("A+")
+      : score >= 50
+      ? console.log("B+")
+      : console.log("F");
+    ```
+    
+    - 가독성이 좋지 않음 -> If문으로 작성 권장
 
 <br>
 <br>
